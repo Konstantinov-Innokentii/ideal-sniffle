@@ -6,7 +6,7 @@ To create your own branch you need to checkout it from **develop**.
 When you finish you work on it make sure latest develop merged into and then create MR.
 (If you have problems with resolving merge conflicts contact head-dev. Do not push your merge commit in this case)
 
-##Our ticketflow
+## Our ticketflow
 
 We use github for issue tracking.
 On project tab you can see our board.
