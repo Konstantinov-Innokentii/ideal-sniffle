@@ -27,6 +27,10 @@ DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+)
+
 
 # Application definition
 
