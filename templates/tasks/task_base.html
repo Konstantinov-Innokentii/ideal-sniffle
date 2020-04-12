@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% if user.is_authenticated %}
+        {% if user.active_time_entry_data %}
+            <span>{{ user.active_time_entry_data.task }}</span>
+            <span id="counter"></span>
+            <script type="text/javascript">
+
+                let seconds = {{ user.active_time_entry_data.start }};
+                let initial_moment = Math.floor(Date.now() / 1000);
+                let counter_view = document.getElementById('counter');
+
+                function incrementSeconds() {
+                    initial_moment += 1;
+
+                    counter_view.innerText = new Date((initial_moment - seconds)* 1000).toISOString().substr(11, 8);
+                }
+
+                var cancel = setInterval(incrementSeconds, 1000);
+
+            </script>
+        {% else %}
+            <span>No current task </span>
+        {% endif %}
+    {% endif %}
+</div>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+
+</html>

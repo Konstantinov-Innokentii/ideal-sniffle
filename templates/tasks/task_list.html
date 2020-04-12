@@ -1,0 +1,17 @@
+{%  extends 'tasks/task_base.html' %}
+
+{% block content %}
+<div>
+    {% if task_list %}
+        <ul>
+            {% for task in task_list %}
+                <li><a href={% url 'task_detail' task.id %}>{{ task.render_for_template }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no tasks yet</p>
+    {% endif %}
+    <a href={% url 'task_new' %}>Add new task</a>
+</div>
+{% endblock %}
+
