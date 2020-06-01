@@ -54,7 +54,6 @@ class Task(models.Model):
         else:
             super().save(*args, **kwargs)
 
-
     @property
     def render_for_template(self):
         return f"{self.name}"
